@@ -1,0 +1,29 @@
+/* ===================== in general ============================ */
+.body {
+    background: lightgrey;
+    color: black;
+    font: normal 16px Calibri, sans-serif;
+    line-height: 1.6em;
+    margin: 0px;
+}
+
+.container {
+    font: normal 16px Calibri, sans-serif;
+    width: 80%;
+    margin: auto;
+}
+
+.button {
+    font: normal 16px Calibri, sans-serif;
+    background-color: coral;
+    color: black;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.button:hover {
+    background: cornflowerblue;
+    color: white;
+}

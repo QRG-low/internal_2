@@ -1,5 +1,9 @@
-var acc = document.getElementsByClassName("accordion");
-var i;
+let show_rest = false;
+
+showDivs(show_rest);
+
+let acc = document.getElementsByClassName("accordion");
+let i;
 
 for (i = 0; i < acc.length; i++) {
     acc[i].addEventListener("click", function () {
@@ -17,6 +21,21 @@ for (i = 0; i < acc.length; i++) {
     });
 }
 
+
+<!-- ===================== show divs ======================== -->
+function showDivs(showRest) {
+    if (showRest) {
+        document.getElementById('main-screen').style.display = 'block';
+        document.getElementById('staff-screen').style.display = 'none';
+        document.getElementById('add-staff-screen').style.display = 'block';
+
+    } else {
+        document.getElementById('main-screen').style.display = 'block';
+        document.getElementById('staff-screen').style.display = 'block';
+        document.getElementById('add-staff-screen').style.display = 'none';
+    }
+}
+
 <!-- ===================== logout ======================== -->
 function userLogout() {
     document.location.href = "../html/html_main.html", true;
@@ -27,9 +46,14 @@ function showAdminStudents() {
     document.location.href = "../html/html_students.html", true;
 }
 
+function showAdminStaff() {
+    document.location.href = "../html/html_staff.html", true;
+}
+
 <!-- ===================== not yet implemented ======================== -->
 function addStaff() {
-
+    show_rest = true;
+    showDivs(show_rest);
 }
 
 function updateStaff() {

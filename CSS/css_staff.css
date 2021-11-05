@@ -1,7 +1,38 @@
-/* Style the buttons that are used to open and close the accordion panel */
+/* ===================== in general ============================ */
+.body {
+    background: lightgrey;
+    color: black;
+    font: normal 16px Calibri, sans-serif;
+    line-height: 1.6em;
+    margin: 0px;
+}
+
+.container {
+    font: normal 16px Calibri, sans-serif;
+    width: 80%;
+    margin: auto;
+}
+
+.button {
+    font: normal 16px Calibri, sans-serif;
+    background-color: coral;
+    color: black;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.button:hover {
+    background: cornflowerblue;
+    color: white;
+}
+
+/* ===================== accordion ============================ */
 .accordion {
-    background-color: #eee;
-    color: #444;
+    font: normal 14px Calibri, sans-serif;
+    background-color: lightsalmon;
+    color: black;
     cursor: pointer;
     padding: 18px;
     width: 100%;
@@ -11,15 +42,29 @@
     transition: 0.4s;
 }
 
-/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
 .active, .accordion:hover {
-    background-color: #ccc;
+    background-color: lightskyblue;
 }
 
-/* Style the accordion panel. Note: hidden by default */
 .panel {
     padding: 0 18px;
     background-color: white;
     display: none;
     overflow: hidden;
 }
+
+/* ===================== tables inside accordion ============================ */
+table {
+    font: normal 12px Calibri, sans-serif;
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}

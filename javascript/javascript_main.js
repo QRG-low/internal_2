@@ -28,6 +28,7 @@ const user_admin = new User('Admin', 'Admin', true);
 let user_array = [];
 
 user_array.push(user_admin);
+
 <!-- ===================== login screen - user check ======================== -->
 login_form.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -62,6 +63,15 @@ login_form.addEventListener('submit', (e) => {
         login_error_element.innerText = error_messages.join(', ');
     }
 });
+
+function showPassword() {
+    var x = document.getElementById("login_user_password");
+    if (x.type === "password") {
+        x.type = "text";
+    } else {
+        x.type = "password";
+    }
+}
 
 
 <!-- ===================== login screen - div check ======================== -->
