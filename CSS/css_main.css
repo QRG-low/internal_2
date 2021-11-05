@@ -1,0 +1,97 @@
+body {
+    background: lightgrey;
+    color: darkslategray;
+    font: normal 16px Helvetica, sans-serif;
+    line-height: 1.6em;
+    margin: 0px;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+}
+
+.button {
+    background-color: coral;
+    color: black;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.button:hover {
+    background: cornflowerblue;
+    color: white;
+}
+
+/* ===================== login-screen ============================ */
+
+.login-screen {
+    border: 1px green solid;
+    padding: 10px;
+    border-radius: 20px;
+    margin: 20px;
+}
+
+.required {
+    font: normal 11px Helvetica, sans-serif;
+}
+
+.my-form {
+    padding: 20px;
+}
+
+.my-form .form-group {
+    padding-bottom: 15px;
+}
+
+.my-form label {
+    display: block;
+}
+
+/* target only textarea for username*/
+.my-form input[type="text"], .my-form textarea {
+    padding: 8px;
+    width: 150px;
+    border-radius: 10px;
+}
+
+/* target only textarea for password*/
+.my-form input[type="password"], .my-form textarea {
+    padding: 8px;
+    width: 150px;
+    border-radius: 10px;
+}
+
+/* ===================== main-screen ============================ */
+
+.main-screen {
+    border: 1px green solid;
+    padding: 10px;
+    border-radius: 20px;
+    margin: 20px;
+}
+
+#navbar-main {
+    padding-bottom: 10px;
+}
+
+/* problem with font size of logout button */
+#navbar-main input[type="submit"] {
+    font: normal 14px Helvetica, sans-serif;
+    margin-right: 20px;
+}
+
+#navbar-main input[type="button"] {
+    font: normal 14px Helvetica, sans-serif;
+    margin-right: 20px;
+}
+
+/*=============================================================*/
+.error {
+    background: orangered;
+    color: #fff;
+    padding: 5px;
+    margin: 5px;
+}

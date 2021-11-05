@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Students html</title>
+    <link rel="stylesheet" type="text/css" href="/CSS/css_students.css">
+    <script src="/javascript/javascript_students.js" async defer></script>
+</head>
+<body>
+<!-- ===================== main screen ======================== -->
+<div class="main-screen" id="main-screen">
+    <div class="msg" id="welcome-message"></div>
+    <nav class="navbar" id="navbar-main">
+        <input class="button" onclick="showAdminStudents()" type="submit" value="Students">
+        <input class="button" onclick="showAdminStaff()" type="submit" value="Staff">
+        <input class="button" onclick="userLogout()" id="main-logout-btn" type="button" value="Logout">
+    </nav>
+</div>
+
+<!-- ===================== student screen ======================== -->
+<div class="student-screen" id="student-screen">
+    <div class="msg" id="show-students-message"></div>
+    <nav class="navbar" id="navbar-student">
+        <input class="button" onclick="addStudent()" id="add-new-student-btn" type="submit" value="Add Student">
+        <input class="button" onclick="updateStudent()" id="update-student-btn" type="submit"
+               value="Update Student">
+        <input class="button" onclick="deleteStudent()" id="delete-student-btn" type="submit"
+               value="Delete Student">
+    </nav>
+</div>
+
+<!-- ===================== add student screen ======================== -->
+<div class="add-student-screen" id="add-student-screen">
+    <form class="add-contact-form" id="add-contact-form">
+        <div class="msg" id="msg-add-contact-form"></div>
+        <div class="form-group">
+            <label>*Student_ID</label>
+            <input id="student-id" type="text" name="student ID" placeholder="Student ID e. g. s0123456">
+
+            <label>*First_Name</label>
+            <input id="first-name-id" type="text" name="first-name" placeholder="First name e. g. Sam">
+
+            <label>Last_name</label>
+            <input id="last-name-id" type="text" name="last-name" placeholder="Last name e. g. Smith">
+
+            <input id="DOB-id" type="date" value="DOB">
+
+            <div class="dropdown" id="dropdown-id">
+                <label>*Department
+                    <select id="select-department-id" name="Department">
+                        <option selected>---none---</option>
+                        <option>Applied Engineering</option>
+                        <option>Business Management</option>
+                        <option>Computer Engineering</option>
+                    </select>
+                </label>
+            </div>
+            <form>
+                <input class="radio-id" type="radio" name="sex" value="male">Male
+                <input class="radio-id" type="radio" name="sex" value="female">Female
+            </form>
+            <form>
+                <label for="e-mail-id">*Email_ID</label>
+                <input id="e-mail-id" type="email" placeholder="e-mail e. g. example@example.net">
+            </form>
+        </div>
+
+        <input id="add_staff_button_id" class="button" type="submit" value="Add">
+        <p class="required">*Mandatory fields</p>
+    </form>
+</div>
+</body>
+</html>

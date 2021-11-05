@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Staff html</title>
+    <link rel="stylesheet" type="text/css" href="/CSS/css_staff.css">
+    <script src="/javascript/javascript_staff.js" async defer></script>
+</head>
+<body>
+<!-- ===================== main screen ======================== -->
+<div class="main-screen" id="main-screen">
+    <div class="msg" id="welcome-message"></div>
+    <nav class="navbar" id="navbar-main">
+        <input class="button" onclick="showAdminStudents()" type="submit" value="Students">
+        <input class="button" onclick="showAdminStaff()" type="submit" value="Staff">
+        <input class="button" onclick="userLogout()" id="main-logout-btn" type="button" value="Logout">
+    </nav>
+</div>
+
+<!-- ===================== staff screen ======================== -->
+<div class="staff-screen" id="staff-screen">
+    <div class="msg" id="show-staff-message"></div>
+    <nav class="navbar" id="navbar-staff">
+        <input class="button" onclick="addStaff()" id="add-new-staff-btn" type="submit" value="Add Staff">
+        <input class="button" onclick="updateStaff()" id="update-staff-btn" type="submit" value="Update Staff">
+        <input class="button" onclick="deleteStaff()" id="delete-staff-btn" type="submit" value="Delete Staff">
+    </nav>
+
+    <button class="accordion">Applied Engineering</button>
+    <div class="panel">
+        <table>
+            <tr>
+                <th>Student ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Date of birth</th>
+                <th>Sex</th>
+                <th>E-mail</th>
+            </tr>
+            <tr>
+                <td>s0571611</td>
+                <td>Mandy</td>
+                <td>Schneider</td>
+                <td>08/21/1989</td>
+                <td>Female</td>
+                <td>s0571611@htw-berlin.de</td>
+            </tr>
+            <tr>
+                <td>s0571258</td>
+                <td>Leon</td>
+                <td>Huder</td>
+                <td>04/27/1994</td>
+                <td>Male</td>
+                <td>s0571258@htw-berlin.de</td>
+            </tr>
+            <tr>
+                <td>s0578431</td>
+                <td>Roberto</td>
+                <td>Schöbel</td>
+                <td>02/17/1983</td>
+                <td>Male</td>
+                <td>s0578431@htw-berlin.de</td>
+            </tr>
+        </table>
+    </div>
+
+    <button class="accordion">Business Management</button>
+    <div class="panel">
+        <table>
+            <tr>
+                <th>Student ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Date of birth</th>
+                <th>Sex</th>
+                <th>E-mail</th>
+            </tr>
+            <tr>
+                <td>s0561499</td>
+                <td>Marina</td>
+                <td>Gonzales</td>
+                <td>04/19/1989</td>
+                <td>Female</td>
+                <td>s0561499@htw-berlin.de</td>
+            </tr>
+            <tr>
+                <td>s0559435</td>
+                <td>Steven</td>
+                <td>Melcher</td>
+                <td>03/31/1990</td>
+                <td>Male</td>
+                <td>s0559435@htw-berlin.de</td>
+            </tr>
+            <tr>
+                <td>s0573852</td>
+                <td>Cynthia</td>
+                <td>Pösch</td>
+                <td>02/17/1983</td>
+                <td>Female</td>
+                <td>s0573852@htw-berlin.de</td>
+            </tr>
+        </table>
+    </div>
+
+    <button class="accordion">Computer Engineering</button>
+    <div class="panel">
+        <table>
+            <tr>
+                <th>Student ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Date of birth</th>
+                <th>Sex</th>
+                <th>E-mail</th>
+            </tr>
+            <tr>
+                <td>s0543456</td>
+                <td>Sarah</td>
+                <td>Brumm</td>
+                <td>04/16/1988</td>
+                <td>Female</td>
+                <td>s0543456@htw-berlin.de</td>
+            </tr>
+            <tr>
+                <td>s0580001</td>
+                <td>Andi</td>
+                <td>Saputra</td>
+                <td>02/12/1990</td>
+                <td>Male</td>
+                <td>s0580001@htw-berlin.de</td>
+            </tr>
+            <tr>
+                <td>s0530768</td>
+                <td>Moe</td>
+                <td>Sqair</td>
+                <td>10/16/1988</td>
+                <td>Male</td>
+                <td>s0530768@htw-berlin.de</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- ===================== add staff screen ======================== -->
+<div class="add-staff-screen" id="add-staff-screen">
+    <form class="add-staff-form" id="add-staff-form">
+        <div class="msg" id="msg-add-staff-form"></div>
+        <div class="form-group">
+            <label>*Staff_ID</label>
+            <input id="staff-id" type="text" name="staff ID" placeholder="Staff ID e. g. s0123456">
+
+            <label>*First_Name</label>
+            <input id="first-name-id" type="text" name="first-name" placeholder="First name e. g. Sam">
+
+            <label>Last_name</label>
+            <input id="last-name-id" type="text" name="last-name" placeholder="Last name e. g. Smith">
+
+            <input id="DOB-id" type="date" value="DOB">
+
+            <form>
+                <input class="radio-id" type="radio" name="sex" value="male">Male
+                <input class="radio-id" type="radio" name="sex" value="female">Female
+            </form>
+            <form>
+                <label for="e-mail-id">*Email_ID</label>
+                <input id="e-mail-id" type="email" placeholder="e-mail e. g. example@example.net">
+            </form>
+        </div>
+
+        <input id="add_staff_button_id" class="button" type="submit" value="Add">
+        <p class="required">*Mandatory fields</p>
+    </form>
+</div>
+</body>
+</html>
