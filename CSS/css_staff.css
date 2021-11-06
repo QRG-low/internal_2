@@ -1,7 +1,7 @@
 /* ===================== in general ============================ */
-.body {
+body {
     background: lightgrey;
-    color: black;
+    color: darkslategrey;
     font: normal 16px Calibri, sans-serif;
     line-height: 1.6em;
     margin: 0px;
@@ -67,4 +67,53 @@ th, td {
     padding: 8px;
 }
 
-tr:nth-child(even){background-color: #f2f2f2}
+tr:nth-child(even) {
+    background-color: #f2f2f2
+}
+
+/* ================== add student ======================== */
+.required {
+    font: normal 10px Calibri, sans-serif;
+}
+
+.add-staff-form {
+    border: 1px green solid;
+    padding: 10px;
+    border-radius: 30px;
+    margin: 20px;
+}
+
+.add-staff-form {
+    padding: 20px;
+}
+
+.add-staff-form .form-group {
+    padding-bottom: 15px;
+}
+
+/* display labels and input fields in separate lines*/
+.add-staff-form label {
+    display: block;
+}
+
+.add-staff-form input[type="text"], .add-staff-form textarea {
+    padding: 8px;
+    width: 150px;
+    border-radius: 10px;
+}
+
+.add-staff-form input[type="date"], .add-staff-form textarea {
+    padding: 8px;
+    width: 150px;
+    border-radius: 10px;
+}
+
+.add-staff-form input[type="email"], .add-staff-form textarea {
+    padding: 8px;
+    width: 150px;
+    border-radius: 10px;
+}
+
+.add-staff-form input[type="submit"] {
+    margin: auto;
+}
