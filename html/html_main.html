@@ -9,6 +9,11 @@
 <body>
 <div class="container">
     <!-- ===================== login screen ======================== -->
+    <div class="checkAdminOrStaff" id="checkAdminOrstaff">
+        <input class="button" id="Admin-button" onclick="chooseAdmin()" type="submit" value="Admin">
+        <input class="button" id="Staff-button" onclick="showStaff()" type="submit" value="Staff">
+    </div>
+
     <div class="login-screen" id="login-screen">
         <div class="msg" id="login_error_element"></div>
         <form class="my-form" id="login_form">

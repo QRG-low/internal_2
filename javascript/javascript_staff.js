@@ -12,7 +12,7 @@ for (i = 0; i < acc.length; i++) {
         this.classList.toggle("active");
 
         /* Toggle between hiding and showing the active panel */
-        var panel = this.nextElementSibling;
+        let panel = this.nextElementSibling;
         if (panel.style.display === "block") {
             panel.style.display = "none";
         } else {
@@ -47,7 +47,7 @@ function showAdminStudents() {
 }
 
 function showAdminStaff() {
-    document.location.href = "../html/html_staff.html", true;
+    document.location.href = "../html/html_adminStaff.html", true;
 }
 
 <!-- ===================== not yet implemented ======================== -->

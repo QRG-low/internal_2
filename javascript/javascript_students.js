@@ -28,7 +28,7 @@ function showAdminStudents() {
 }
 
 function showAdminStaff() {
-    document.location.href = "../html/html_staff.html", true;
+    document.location.href = "../html/html_adminStaff.html", true;
 }
 
 <!-- ===================== not yet implemented ======================== -->

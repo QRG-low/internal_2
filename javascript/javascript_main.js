@@ -9,9 +9,14 @@ const welcome_message = document.getElementById('welcome-message');
 const max_tries = 3;
 let actual_tries = 1;
 
+let choseNothing = true;
+let choseAdmin = false;
+let choseStaff = false;
 let user_logged_in = false;
 
-isLoggedInScreen(user_logged_in)
+chooseAdminOrStaff();
+//isLoggedInScreen(user_logged_in);
+
 let administrator;
 
 let current_user;
@@ -73,6 +78,28 @@ function showPassword() {
     }
 }
 
+<!-- ===================== login screen - default mode ======================== -->
+function chooseAdminOrStaff() {
+    if (choseNothing) {
+        console.log(choseNothing);
+        document.getElementById('main-screen').style.display = 'none';
+        document.getElementById('login-screen').style.display = 'none';
+    }
+    if (!choseNothing && choseAdmin) {
+        choseNothing = false;
+        isLoggedInScreen();
+    }
+    if (!choseNothing && choseStaff) {
+        choseNothing = false;
+        showAdminStaff();
+    }
+}
+
+function chooseAdmin() {
+    choseNothing = false;
+    choseAdmin = true;
+    chooseAdminOrStaff();
+}
 
 <!-- ===================== login screen - div check ======================== -->
 function isLoggedInScreen(isLoggedIn) {
@@ -82,9 +109,11 @@ function isLoggedInScreen(isLoggedIn) {
     } else {
         document.getElementById('login-screen').style.display = 'block';
         document.getElementById('main-screen').style.display = 'none';
+        document.getElementById('checkAdminOrstaff').style.display = 'none';
     }
 }
 
+<!-- ===================== login screen - wrong login ======================== -->
 function disableLogin() {
     document.getElementById('login_user_name').disabled = true;
     document.getElementById('login_user_password').disabled = true;
@@ -104,5 +133,9 @@ function showAdminStudents() {
 }
 
 function showAdminStaff() {
+    document.location.href = "../html/html_adminStaff.html", true;
+}
+
+function showStaff() {
     document.location.href = "../html/html_staff.html", true;
 }
