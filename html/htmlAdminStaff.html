@@ -3,13 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <title>Staff html</title>
-    <link rel="stylesheet" type="text/css" href="/CSS/css_staff.css">
-    <script src="/javascript/javascript_staff.js" async defer></script>
+    <link rel="stylesheet" type="text/css" href="/CSS/cssStaff.css">
+    <script src="/javascript/javascriptAdminStaff.js" async defer></script>
 </head>
 <body>
+<!-- ===================== main screen ======================== -->
+<div class="main-screen" id="main-screen">
+    <div class="msg" id="welcome-message"></div>
+    <nav class="navbar" id="navbar-main">
+        <input class="button" onclick="showAdminStudents()" type="submit" value="Students">
+        <input class="button" onclick="showAdminStaff()" type="submit" value="Staff">
+        <input class="button" onclick="userLogout()" id="main-logout-btn" type="button" value="Logout">
+    </nav>
+</div>
+
 <!-- ===================== staff screen ======================== -->
 <div class="staff-screen" id="staff-screen">
     <div class="msg" id="show-staff-message"></div>
+    <nav class="navbar" id="navbar-staff">
+        <input class="button" onclick="addStaff()" id="add-new-staff-btn" type="submit" value="Add Staff">
+        <input class="button" onclick="updateStaff()" id="update-staff-btn" type="submit" value="Update Staff">
+        <input class="button" onclick="deleteStaff()" id="delete-staff-btn" type="submit" value="Delete Staff">
+    </nav>
+
+    <ul>
+        <li>st8756354, Kousei Arima, 1970-05-06, Male, st8756354@htw-berlin.de</li>
+        <li>st7854163, Kaori Miyazono, 1971-07-17, Female, st7854163@htw-berlin.de</li>
+        <li>st8563683, Tsubaki Sawabe, 1970-02-22, Female, st8563683@htw-berlin.de</li>
+        <li>st6442287, Ryouta Watari, 1969-12-13, Male, st6442287@htw-berlin.de</li>
+    </ul>
 
     <button class="accordion">Applied Engineering</button>
     <div class="panel">
@@ -130,6 +152,37 @@
             </table>
         </div>
     </div>
+</div>
+
+<!-- ===================== add staff screen ======================== -->
+<div class="add-staff-screen" id="add-staff-screen">
+    <form class="add-staff-form" id="add-staff-form">
+        <div class="msg" id="msg-add-staff-form"></div>
+        <div class="form-group">
+            <label>*Student_ID</label>
+            <input id="student-id" type="text" name="student ID" placeholder="Student ID e. g. s0123456">
+
+            <label>*First_Name</label>
+            <input id="first-name-id" type="text" name="first-name" placeholder="First name e. g. Sam">
+
+            <label>Last_name</label>
+            <input id="last-name-id" type="text" name="last-name" placeholder="Last name e. g. Smith">
+
+            <label>DOB</label>
+            <input class="date" id="DOB-id" type="date" value="DOB">
+
+            <input class="radio-id" type="radio" name="sex" value="male">Male
+            <input class="radio-id" type="radio" name="sex" value="female">Female
+
+            <label>*Email_ID</label>
+            <input id="e-mail-id" type="email" placeholder="e-mail e. g. example@example.net">
+
+        </div>
+
+        <input id="add_staff_button_id" class="button" type="submit" value="Add">
+        <p class="required">*Mandatory fields</p>
+
+    </form>
 </div>
 </body>
 </html>

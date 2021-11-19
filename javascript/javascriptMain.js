@@ -129,13 +129,13 @@ function userLogout() {
 
 <!-- ===================== re-direction ======================== -->
 function showAdminStudents() {
-    document.location.href = "../html/html_students.html", true;
+    document.location.href = "../html/htmlStudents.html", true;
 }
 
 function showAdminStaff() {
-    document.location.href = "../html/html_adminStaff.html", true;
+    document.location.href = "../html/htmlAdminStaff.html", true;
 }
 
 function showStaff() {
-    document.location.href = "../html/html_staff.html", true;
+    document.location.href = "../html/htmlNoAdminStaff.html", true;
 }
