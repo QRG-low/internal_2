@@ -19,16 +19,16 @@ function showDivs(showRest) {
 <!-- ===================== logout ======================== -->
 
 function userLogout() {
-    document.location.href = "../html/htmlMain.html", true;
+    document.location.href = "htmlMain.html", true;
 }
 
 <!-- ===================== re-direction ======================== -->
 function showAdminStudents() {
-    document.location.href = "../html/htmlStudents.html", true;
+    document.location.href = "htmlStudents.html", true;
 }
 
 function showAdminStaff() {
-    document.location.href = "../html/htmlAdminStaff.html", true;
+    document.location.href = "htmlAdminStaff.html", true;
 }
 
 <!-- ===================== not yet implemented ======================== -->
