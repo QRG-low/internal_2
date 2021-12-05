@@ -71,12 +71,12 @@ tr:nth-child(even) {
     background-color: #f2f2f2
 }
 
-/* ================== add student ======================== */
+/* ================== add Staff ======================== */
 .required {
     font: normal 10px Calibri, sans-serif;
 }
 
-.add-staff-form {
+.add-staff-screen {
     border: 1px green solid;
     padding: 10px;
     border-radius: 30px;
@@ -87,28 +87,21 @@ tr:nth-child(even) {
     padding: 20px;
 }
 
+/* make some space between form-group and "Add" Button*/
 .add-staff-form .form-group {
-    padding-bottom: 15px;
+    padding-bottom: 30px;
 }
 
 /* display labels and input fields in separate lines*/
-.add-staff-form label {
+.add-staff-form label,
+.radio-gender{
     display: block;
 }
 
-.add-staff-form input[type="text"], .add-staff-form textarea {
-    padding: 8px;
-    width: 150px;
-    border-radius: 10px;
-}
-
-.add-staff-form input[type="date"], .add-staff-form textarea {
-    padding: 8px;
-    width: 150px;
-    border-radius: 10px;
-}
-
-.add-staff-form input[type="email"], .add-staff-form textarea {
+.add-staff-form input[type="text"],
+.add-staff-form input[type="email"],
+.add-staff-form input[type="date"],
+.add-staff-form textarea {
     padding: 8px;
     width: 150px;
     border-radius: 10px;

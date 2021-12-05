@@ -1,3 +1,15 @@
+const startSummerSemester = 4;
+const endSummerSemester = 9;
+
+//+ 1 because with DOB 5th December of 1960 one turns 61 only on 5th December 2021
+const maxAge = 61;
+const minAge = 17;
+
+const joiningDate = new Date();
+joiningDate.setFullYear(2015,0,1);
+
+let date = new Date();
+
 let show_rest = false;
 
 showDivs(show_rest);
@@ -31,12 +43,37 @@ function showAdminStaff() {
     document.location.href = "htmlAdminStaff.html", true;
 }
 
-<!-- ===================== not yet implemented ======================== -->
 function addStudent() {
     show_rest = true;
     showDivs(show_rest);
 }
 
+function validateDOB(){
+    let selectedDate = new Date(document.getElementById("Student-DOB").value);
+    let oldest = new Date(date);
+    oldest.setFullYear(date.getFullYear() - maxAge);
+    let youngest = new Date(date);
+    youngest.setFullYear(date.getFullYear() - minAge);
+
+    if(selectedDate <= oldest || youngest <= selectedDate){
+        alert("Invalid DOB!");
+        document.getElementById("Student-DOB").value = null;
+    }
+}
+
+function validateJoiningDate(){
+    let selectedDate = new Date(document.getElementById("Student-Joining-Date").value);
+    let oldest = joiningDate;
+    let youngest = new Date(date);
+
+    if(selectedDate <= oldest || youngest < selectedDate){
+        alert("Invalid Joining Date!");
+        document.getElementById("Student-Joining-Date").value = null;
+    }
+}
+
+
+<!-- ===================== not yet implemented ======================== -->
 function updateStudent() {
 
 }
@@ -44,3 +81,12 @@ function updateStudent() {
 function deleteStudent() {
 
 }
+
+fetch('https://jsonplaceholder.typicode.com/users', {
+    method: 'get'
+})
+.then(response => response.json())
+.then(jsonData => console.log(jsonData))
+.catch(err => {
+    console.log(err)
+})
