@@ -6,7 +6,7 @@ const maxAge = 61;
 const minAge = 17;
 
 const joiningDate = new Date();
-joiningDate.setFullYear(2015,0,1);
+joiningDate.setFullYear(2015, 0, 1);
 
 let date = new Date();
 
@@ -37,6 +37,7 @@ function userLogout() {
 <!-- ===================== re-direction ======================== -->
 function showAdminStudents() {
     document.location.href = "htmlStudents.html", true;
+    fetchJSON();
 }
 
 function showAdminStaff() {
@@ -48,25 +49,25 @@ function addStudent() {
     showDivs(show_rest);
 }
 
-function validateDOB(){
+function validateDOB() {
     let selectedDate = new Date(document.getElementById("Student-DOB").value);
     let oldest = new Date(date);
     oldest.setFullYear(date.getFullYear() - maxAge);
     let youngest = new Date(date);
     youngest.setFullYear(date.getFullYear() - minAge);
 
-    if(selectedDate <= oldest || youngest <= selectedDate){
+    if (selectedDate <= oldest || youngest <= selectedDate) {
         alert("Invalid DOB!");
         document.getElementById("Student-DOB").value = null;
     }
 }
 
-function validateJoiningDate(){
+function validateJoiningDate() {
     let selectedDate = new Date(document.getElementById("Student-Joining-Date").value);
     let oldest = joiningDate;
     let youngest = new Date(date);
 
-    if(selectedDate <= oldest || youngest < selectedDate){
+    if (selectedDate <= oldest || youngest < selectedDate) {
         alert("Invalid Joining Date!");
         document.getElementById("Student-Joining-Date").value = null;
     }
@@ -82,11 +83,10 @@ function deleteStudent() {
 
 }
 
-fetch('https://jsonplaceholder.typicode.com/users', {
-    method: 'get'
-})
-.then(response => response.json())
-.then(jsonData => console.log(jsonData))
-.catch(err => {
-    console.log(err)
-})
+function fetchJSON() {
+    fetch("students.json")
+        .then(response => response.json())
+        .then(data => {
+            console.log(data)
+        })
+}
