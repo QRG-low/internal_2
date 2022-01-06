@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Students html</title>
     <link rel="stylesheet" type="text/css" href="../CSS/cssStudents.css">
+
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" charset="utf8"
+            src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
+
     <script src="../javascript/javascriptStudents.js" async defer></script>
 </head>
 <body>
@@ -29,6 +37,22 @@
             <input class="button" onclick="deleteStudent()" id="delete-student-btn" type="submit"
                    value="Delete Student">
         </nav>
+
+        <table id="students-table" class="display" style="width: 100%">
+            <thead>
+            <tr>
+                <th>Student_ID</th>
+                <th>First_Name</th>
+                <th>Last_Name</th>
+                <th>DOB</th>
+                <th>Department</th>
+                <th>Gender</th>
+                <th>Email_ID</th>
+                <th>Joining_Date</th>
+            </tr>
+            </thead>
+        </table>
+
     </div>
 
     <!-- ===================== add student screen ======================== -->
@@ -46,7 +70,7 @@
                 <input id="last-name-id" type="text" name="last-name" placeholder="Last name e. g. Smith">
 
                 <label for="Student-DOB">DOB</label>
-                <input id="Student-DOB" class="date"  type="date" placeholder="YYYY-MM-DD" oninput="validateDOB()">
+                <input id="Student-DOB" class="date" type="date" placeholder="YYYY-MM-DD" oninput="validateDOB()">
 
                 <div class="dropdown" id="dropdown-id">
                     <label for="select-department-id">*Department
@@ -70,7 +94,8 @@
                 <input id="e-mail-id" type="email" placeholder="e-mail e. g. example@example.net">
 
                 <label for="Student-Joining-Date">Joining_Date</label>
-                <input id="Student-Joining-Date" class="date"  type="date" placeholder="YYYY-MM-DD" oninput="validateJoiningDate()">
+                <input id="Student-Joining-Date" class="date" type="date" placeholder="YYYY-MM-DD"
+                       oninput="validateJoiningDate()">
 
             </div>
 

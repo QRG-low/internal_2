@@ -14,6 +14,22 @@ let show_rest = false;
 
 showDivs(show_rest);
 
+$(document).ready(function () {
+    $('#students-table').DataTable({
+        'ajax': './students.json',
+        'columns': [
+            {'students_data': 'Student_ID'},
+            {'students_data': 'First_Name'},
+            {'students_data': 'Last_Name'},
+            {'students_data': 'DOB'},
+            {'students_data': 'Department'},
+            {'students_data': 'Gender'},
+            {'students_data': 'Email_ID'},
+            {'students_data': 'Joining_Date'}
+        ]
+    });
+});
+
 <!-- ===================== show divs ======================== -->
 function showDivs(showRest) {
     if (showRest) {
@@ -25,6 +41,7 @@ function showDivs(showRest) {
         document.getElementById('main-screen').style.display = 'block';
         document.getElementById('student-screen').style.display = 'block';
         document.getElementById('add-student-screen').style.display = 'none';
+
     }
 }
 
@@ -37,7 +54,16 @@ function userLogout() {
 <!-- ===================== re-direction ======================== -->
 function showAdminStudents() {
     document.location.href = "htmlStudents.html", true;
-    fetchJSON();
+
+
+    jsonReader("./students.json", (err, students) => {
+        if (err) {
+            console.log(err);
+            return;
+        }
+        console.log(students[0].DOB); // => "Infinity Loop Drive"
+    });
+
 }
 
 function showAdminStaff() {
@@ -82,11 +108,22 @@ function updateStudent() {
 function deleteStudent() {
 
 }
+/*
+const fs = require("fs");
 
-function fetchJSON() {
-    fetch("students.json")
-        .then(response => response.json())
-        .then(data => {
-            console.log(data)
-        })
+function jsonReader(filePath, cb) {
+    fs.readFile(filePath, (err, fileData) => {
+        if (err) {
+            return cb && cb(err);
+        }
+        try {
+            const object = JSON.parse(fileData);
+            return cb && cb(null, object);
+        } catch (err) {
+            return cb && cb(err);
+        }
+    });
 }
+
+
+ */
