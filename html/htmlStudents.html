@@ -13,9 +13,10 @@
     <script type="text/javascript" charset="utf8"
             src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
 
-    <script src="../javascript/javascriptStudents.js" async defer></script>
+    <script src="../javascript/javascriptStudents.js" async></script>
+    <script src="../javascript/jsonData.js"></script>
 </head>
-<body>
+<body onload="loadStudentTable(studentsJSON)">
 <div class="container">
     <!-- ===================== main screen ======================== -->
     <div class="main-screen" id="main-screen">
@@ -38,21 +39,20 @@
                    value="Delete Student">
         </nav>
 
-        <table id="students-table" class="display" style="width: 100%">
-            <thead>
-            <tr>
-                <th>Student_ID</th>
-                <th>First_Name</th>
-                <th>Last_Name</th>
-                <th>DOB</th>
-                <th>Department</th>
-                <th>Gender</th>
-                <th>Email_ID</th>
-                <th>Joining_Date</th>
-            </tr>
-            </thead>
-        </table>
+        <select name="department" id="departmentDropDown" required>
+            <option value="All">All</option>
+            <option value="Applied Engineering">Applied Engineering</option>
+            <option value="Computer Engineering">Computer Engineering</option>
+            <option value="Business Management">Business Management</option>
+        </select>
+        <select name="semester" id="semesterDropDown" required>
+            <option value="All">All</option>
+            <option value="Winter">Winter</option>
+            <option value="Summer">Summer</option>
+        </select>
+        <button onclick="loadStudentTable(studentsJSON)">Update/Filter Table</button>
 
+        <div id="studentsTable"></div>
     </div>
 
     <!-- ===================== add student screen ======================== -->
@@ -76,9 +76,9 @@
                     <label for="select-department-id">*Department
                         <select id="select-department-id" name="Department">
                             <option selected>---none---</option>
-                            <option>Applied Engineering</option>
-                            <option>Business Management</option>
-                            <option>Computer Engineering</option>
+                            <option>AppliedEngineering</option>
+                            <option>BusinessManagement</option>
+                            <option>ComputerEngineering</option>
                         </select>
                     </label>
                 </div>

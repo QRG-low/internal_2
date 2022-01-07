@@ -14,29 +14,12 @@ let show_rest = false;
 
 showDivs(show_rest);
 
-$(document).ready(function () {
-    $('#students-table').DataTable({
-        'ajax': './students.json',
-        'columns': [
-            {'students_data': 'Student_ID'},
-            {'students_data': 'First_Name'},
-            {'students_data': 'Last_Name'},
-            {'students_data': 'DOB'},
-            {'students_data': 'Department'},
-            {'students_data': 'Gender'},
-            {'students_data': 'Email_ID'},
-            {'students_data': 'Joining_Date'}
-        ]
-    });
-});
-
 <!-- ===================== show divs ======================== -->
 function showDivs(showRest) {
     if (showRest) {
         document.getElementById('main-screen').style.display = 'block';
         document.getElementById('student-screen').style.display = 'none';
         document.getElementById('add-student-screen').style.display = 'block';
-
     } else {
         document.getElementById('main-screen').style.display = 'block';
         document.getElementById('student-screen').style.display = 'block';
@@ -54,15 +37,6 @@ function userLogout() {
 <!-- ===================== re-direction ======================== -->
 function showAdminStudents() {
     document.location.href = "htmlStudents.html", true;
-
-
-    jsonReader("./students.json", (err, students) => {
-        if (err) {
-            console.log(err);
-            return;
-        }
-        console.log(students[0].DOB); // => "Infinity Loop Drive"
-    });
 
 }
 
@@ -99,6 +73,61 @@ function validateJoiningDate() {
     }
 }
 
+function loadStudentTable(data) {
+    let studentTable = document.querySelector('#studentsTable');
+    studentTable.innerHTML = "";
+
+    let table = document.createElement('table');
+    let headerRow = document.createElement('tr');
+    let headers = ['Student_ID', 'First_Name', 'Last_Name', 'DOB', 'Department', 'Gender', 'Email_ID', 'Joining_Date']
+
+    headers.forEach(headerText => {
+        let header = document.createElement('th');
+        let textNode = document.createTextNode(headerText);
+        header.appendChild(textNode);
+        headerRow.appendChild(header);
+    });
+    table.appendChild(headerRow);
+
+    filterData(data)
+        .forEach(element => {
+            let row = document.createElement('tr');
+            Object.values(element)
+                .forEach(text => {
+                    let cell = document.createElement('td');
+                    let textNode = document.createTextNode(text);
+                    cell.appendChild(textNode);
+                    row.appendChild(cell);
+                })
+            table.appendChild(row);
+        });
+    studentTable.appendChild(table);
+
+}
+
+function filterData(data) {
+    let departmentFilter = document.getElementById("departmentDropDown").value;
+    let semesterFilter = document.getElementById("semesterDropDown").value;
+    let temp = data.slice();
+    if (departmentFilter !== 'All') temp = filterDepartment(temp, departmentFilter);
+    if (semesterFilter !== 'All') temp = filterSemester(temp, semesterFilter);
+    return temp;
+}
+
+function filterDepartment(students, department) {
+    return students.filter(student => student.Department === department);
+}
+
+function filterSemester(students, semester) {
+    if (semester === "Summer") return students.filter(
+        student => student.Joining_Date
+            .split("-")[1] >= 4 && student.Joining_Date.split("-")[1] <= 9
+    );
+    if (semester === "Winter") return students.filter(
+        student => student.Joining_Date
+            .split("-")[1] >= 10 || student.Joining_Date.split("-")[1] <= 3
+    );
+}
 
 <!-- ===================== not yet implemented ======================== -->
 function updateStudent() {
@@ -108,22 +137,3 @@ function updateStudent() {
 function deleteStudent() {
 
 }
-/*
-const fs = require("fs");
-
-function jsonReader(filePath, cb) {
-    fs.readFile(filePath, (err, fileData) => {
-        if (err) {
-            return cb && cb(err);
-        }
-        try {
-            const object = JSON.parse(fileData);
-            return cb && cb(null, object);
-        } catch (err) {
-            return cb && cb(err);
-        }
-    });
-}
-
-
- */

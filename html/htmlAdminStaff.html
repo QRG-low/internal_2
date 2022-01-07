@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Staff html</title>
     <link rel="stylesheet" type="text/css" href="../CSS/cssStaff.css">
-    <script src="../javascript/javascriptAdminStaff.js" async defer></script>
+    <script src="../javascript/javascriptAdminStaff.js" async></script>
+    <script src="../javascript/jsonData.js"></script>
 </head>
-<body>
+<body onload="loadStaffTable(staffJSON)">
 <div class="container">
     <!-- ===================== main screen ======================== -->
     <div class="main-screen" id="main-screen">
@@ -28,136 +29,17 @@
             <input class="button" onclick="deleteStaff()" id="delete-staff-btn" type="submit" value="Delete Staff">
         </nav>
 
-        <ul>
-            <li>sf19800716, Koro Sensei, 1980-07-16, Male, sf19800716@htw-berlin.de</li>
-            <li>sf19920815, Tadaomi Karasuma, 1992-08-15, Male, sf19920815@htw-berlin.de</li>
-            <li>sf19931010, Irina Jelavic, 1993-10-10, Female, sf19931010@htw-berlin.de</li>
-            <li>sf19810412, Gakuhou Asano, 1981-04-12, Male, sf19810412@htw-berlin.de</li>
-        </ul>
+        <select name="department" id="departmentDropDown" required>
+            <option value="All">All</option>
+            <option value="Applied Engineering">Applied Engineering</option>
+            <option value="Computer Engineering">Computer Engineering</option>
+            <option value="Business Management">Business Management</option>
+        </select>
 
-        <!--
-        <button class="accordion">Applied Engineering</button>
-        <div class="panel">
-            <div style="overflow-x:auto;">
-                <table>
-                    <tr>
-                        <th>Student ID</th>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Date of birth</th>
-                        <th>Sex</th>
-                        <th>E-mail</th>
-                    </tr>
-                    <tr>
-                        <td>s0571611</td>
-                        <td>Mandy</td>
-                        <td>Schneider</td>
-                        <td>08/21/1989</td>
-                        <td>Female</td>
-                        <td>s0571611@htw-berlin.de</td>
-                    </tr>
-                    <tr>
-                        <td>s0571258</td>
-                        <td>Leon</td>
-                        <td>Huder</td>
-                        <td>04/27/1994</td>
-                        <td>Male</td>
-                        <td>s0571258@htw-berlin.de</td>
-                    </tr>
-                    <tr>
-                        <td>s0578431</td>
-                        <td>Roberto</td>
-                        <td>Schöbel</td>
-                        <td>02/17/1983</td>
-                        <td>Male</td>
-                        <td>s0578431@htw-berlin.de</td>
-                    </tr>
-                </table>
-            </div>
-        </div>
+        <button onclick="loadStaffTable(staffJSON)">Update/Filter Table</button>
 
-        <button class="accordion">Business Management</button>
-        <div class="panel">
-            <div style="overflow-x:auto;">
-                <table>
-                    <tr>
-                        <th>Student ID</th>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Date of birth</th>
-                        <th>Sex</th>
-                        <th>E-mail</th>
-                    </tr>
-                    <tr>
-                        <td>s0561499</td>
-                        <td>Marina</td>
-                        <td>Gonzales</td>
-                        <td>04/19/1989</td>
-                        <td>Female</td>
-                        <td>s0561499@htw-berlin.de</td>
-                    </tr>
-                    <tr>
-                        <td>s0559435</td>
-                        <td>Steven</td>
-                        <td>Melcher</td>
-                        <td>03/31/1990</td>
-                        <td>Male</td>
-                        <td>s0559435@htw-berlin.de</td>
-                    </tr>
-                    <tr>
-                        <td>s0573852</td>
-                        <td>Cynthia</td>
-                        <td>Pösch</td>
-                        <td>02/17/1983</td>
-                        <td>Female</td>
-                        <td>s0573852@htw-berlin.de</td>
-                    </tr>
-                </table>
-            </div>
-        </div>
-
-        <button class="accordion">Computer Engineering</button>
-        <div class="panel">
-            <div style="overflow-x:auto;">
-                <table>
-                    <tr>
-                        <th>Student ID</th>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Date of birth</th>
-                        <th>Sex</th>
-                        <th>E-mail</th>
-                    </tr>
-                    <tr>
-                        <td>s0543456</td>
-                        <td>Sarah</td>
-                        <td>Brumm</td>
-                        <td>04/16/1988</td>
-                        <td>Female</td>
-                        <td>s0543456@htw-berlin.de</td>
-                    </tr>
-                    <tr>
-                        <td>s0580001</td>
-                        <td>Andi</td>
-                        <td>Saputra</td>
-                        <td>02/12/1990</td>
-                        <td>Male</td>
-                        <td>s0580001@htw-berlin.de</td>
-                    </tr>
-                    <tr>
-                        <td>s0530768</td>
-                        <td>Moe</td>
-                        <td>Sqair</td>
-                        <td>07/18/1988</td>
-                        <td>Male</td>
-                        <td>s0530768@htw-berlin.de</td>
-                    </tr>
-                </table>
-            </div>
-        </div>
-           -->
+        <div id="staffTable"></div>
     </div>
-
 
     <!-- ===================== add staff screen ======================== -->
     <div class="add-staff-screen" id="add-staff-screen">
