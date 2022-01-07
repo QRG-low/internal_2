@@ -9,12 +9,13 @@
 </head>
 <body>
 <div class="container">
-    <!-- ===================== login screen ======================== -->
+    <!-- ===================== choose Admin or Staff screen ======================== -->
     <div class="checkAdminOrStaff" id="checkAdminOrstaff">
         <input class="button" id="Admin-button" onclick="chooseAdmin()" type="submit" value="Admin">
         <input class="button" id="Staff-button" onclick="showStaff()" type="submit" value="Staff">
     </div>
 
+    <!-- ===================== login screen ======================== -->
     <div class="login-screen" id="login-screen">
         <div class="msg" id="login_error_element"></div>
         <form class="my-form" id="login_form">
@@ -28,12 +29,13 @@
                 <input type="checkbox" onclick="showPassword()">Show Password
             </div>
             <input class="button" id="signUp" type="submit" value="Login">
+            <input class="button" id="back" onclick="userLogout()" type="submit" value="Go Back">
             <p class="required"> *required</p>
         </form>
     </div>
 
-    <!-- ===================== main screen ======================== -->
-    <div class="main-s  creen" id="main-screen">
+    <!-- ===================== Admin screen ======================== -->
+    <div class="main-screen" id="main-screen">
         <div class="msg" id="welcome-message"></div>
         <nav class="navbar" id="navbar-main">
             <input class="button" onclick="showAdminStudents()" type="submit" value="Students">

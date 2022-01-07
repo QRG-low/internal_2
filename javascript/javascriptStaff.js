@@ -40,3 +40,7 @@ function filterData(data) {
 function filterDepartment(staffs, department) {
     return staffs.filter(staff => staff.Department === department);
 }
+
+function userLogout() {
+    document.location.href = "htmlMain.html", true;
+}

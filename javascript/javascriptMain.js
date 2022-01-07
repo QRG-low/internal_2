@@ -15,7 +15,6 @@ let choseStaff = false;
 let user_logged_in = false;
 
 chooseAdminOrStaff();
-//isLoggedInScreen(user_logged_in);
 
 let administrator;
 
@@ -81,16 +80,11 @@ function showPassword() {
 <!-- ===================== login screen - default mode ======================== -->
 function chooseAdminOrStaff() {
     if (choseNothing) {
-        console.log(choseNothing);
         document.getElementById('main-screen').style.display = 'none';
         document.getElementById('login-screen').style.display = 'none';
-    }
-    if (!choseNothing && choseAdmin) {
-        choseNothing = false;
+    } else if (choseAdmin) {
         isLoggedInScreen();
-    }
-    if (!choseNothing && choseStaff) {
-        choseNothing = false;
+    } else if (choseStaff) {
         showAdminStaff();
     }
 }
