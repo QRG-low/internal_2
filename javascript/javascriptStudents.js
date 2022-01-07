@@ -12,7 +12,7 @@ let date = new Date();
 
 let show_rest = false;
 
-showDivs(show_rest);
+//showDivs(show_rest);
 
 <!-- ===================== show divs ======================== -->
 function showDivs(showRest) {

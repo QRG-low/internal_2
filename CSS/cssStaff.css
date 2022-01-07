@@ -28,34 +28,9 @@ body {
     color: white;
 }
 
-/* ===================== accordion ============================ */
-.accordion {
-    font: normal 14px Calibri, sans-serif;
-    background-color: lightsalmon;
-    color: black;
-    cursor: pointer;
-    padding: 18px;
-    width: 100%;
-    text-align: left;
-    border: none;
-    outline: none;
-    transition: 0.4s;
-}
-
-.active, .accordion:hover {
-    background-color: lightskyblue;
-}
-
-.panel {
-    padding: 0 18px;
-    background-color: white;
-    display: none;
-    overflow: hidden;
-}
-
 /* ===================== tables inside accordion ============================ */
 table {
-    font: normal 12px Calibri, sans-serif;
+    font: normal 14px Calibri, sans-serif;
     border-collapse: collapse;
     border-spacing: 0;
     width: 100%;
